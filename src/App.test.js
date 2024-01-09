@@ -3,11 +3,11 @@ import { fireEvent } from "@testing-library/react";
 import App from './App';
 
 describe("App",()=>{
-  it("should display an X",()=>{
+  it("Should display a board ",()=>{
     render(<App/>);
     const gameBoard=screen.getByTestId("gameBoard");
     expect(gameBoard).not.toBeNull();
-    expect(gameBoard.textContent).toBe("");
+    expect(gameBoard.textContent).toBe("Next player: X");
 
   });
 
@@ -23,7 +23,7 @@ describe("App",()=>{
     expect(buttons.length).toBe(9);
   });
 
-  it("should be able to click the button",()=>{
+  it("should be display X at the first move",()=>{
     render(<App/>);
     const button=screen.getAllByRole("button")[0];
     fireEvent.click(button);
@@ -39,7 +39,7 @@ describe("App",()=>{
     expect(square[1].textContent).toBe("O");
   });
 
-  it("should display token on the squae only when it is empty",()=>{
+  it("should display token on the square only when it is empty ",()=>{
     render(<App/>);
     const square=screen.getAllByRole("button");
     fireEvent.click(square[0]);

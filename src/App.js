@@ -39,7 +39,7 @@ function Board() {
 
   return (
     <div>
-      <div className="status">{status}</div>
+      <div className="status" data-testid="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
@@ -82,7 +82,7 @@ function calculateWinner(squares) {
 function App() {
   return (
     <div className="game">
-      <div className="game-board">
+      <div className="game-board" data-testid="gameBoard">
         <Board />
       </div>
     </div>
